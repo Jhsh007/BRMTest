@@ -44,7 +44,7 @@ if(isset($_POST['sendForm']) && $_POST['sendForm'] != "0"){
 
 			echo "<table><tr><th>Order</th><td>".$id."</td></tr><tr><th>Product</th><td>".$product."</td></tr><tr><th>Quantity</th><td>".$quantity."</td></tr><tr><th>Price</th><td>".$price."</td></tr></table><br>";
 
-			$sqlInsOrder = "Insert into orders(number_order, id_product, quantity_order, price_order) values(".$id.", ".$idProduct.", ".$quantity.", ".$price.");";
+			$sqlInsOrder = "Insert into orders(number_order, id_product, quantity_order, price_order, state_order) values(".$id.", ".$idProduct.", ".$quantity.", ".$price.", 'active');";
 			$resultInsOrder = mysqli_query($conn, $sqlInsOrder);
 
 			if($resultInsOrder === TRUE){
